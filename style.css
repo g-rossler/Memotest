@@ -2,39 +2,69 @@ body {
     background-color:cadetblue
 }
 
+.cuadro {
+    text-align: center;
+}
+
+.resultado {
+    visibility: hidden;
+    text-align: center;
+}
+
+.reiniciar {
+    visibility: hidden;
+}
+
+.borde {
+    border: 1px solid;
+    border-color: aquamarine;
+}
+
 #cuadrado1 {
+    opacity: 0;
     background-color: ""
 }
 #cuadrado2 {
+    opacity: 0;
     background-color: ""
 }
 #cuadrado3 {
+    opacity: 0;
     background-color: ""
 }
 #cuadrado4 {
+    opacity: 0;
     background-color: ""
 }
 #cuadrado5 {
+    opacity: 0;
     background-color: ""
 }
 #cuadrado6 {
+    opacity: 0;
     background-color: ""
 }
 #cuadrado7 {
+    opacity: 0;
     background-color: ""
 }
 #cuadrado8 {
+    opacity: 0;
     background-color: ""
 }
 #cuadrado9 {
+    opacity: 0;
     background-color: ""
 }
 #cuadrado10 {
+    opacity: 0;
     background-color: ""
 }
 #cuadrado11 {
+    opacity: 0;
     background-color: ""
 }
 #cuadrado12 {
+    opacity: 0;
     background-color: ""
 }
