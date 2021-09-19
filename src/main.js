@@ -1,29 +1,3 @@
-let objetos = {
-    cuadrado1 : {
-    },
-    cuadrado2 : {
-    },
-    cuadrado3 : {
-    },
-    cuadrado4 : {
-    },
-    cuadrado5 : {
-    },
-    cuadrado6 : {
-    },
-    cuadrado7 : {
-    },
-    cuadrado8 : { 
-    },
-    cuadrado9 : {   
-    },
-    cuadrado10 : {    
-    },
-    cuadrado11 : {      
-    },
-    cuadrado12 : {  
-    }
-}
 
 let $tablero = document.querySelector(".container")
 let seleccionCuadro1;
@@ -33,6 +7,7 @@ let contadorPares = 0
 asignarColores()
 habilitarUsuario($tablero) 
 let resultado = document.querySelector(".resultado")
+let parrafo = document.querySelector(".parrafo")
 
 
 function asignarColores() {
@@ -44,7 +19,7 @@ function asignarColores() {
         let arrayNumero = arrayColores.length
         let numeroRandom = numerosRandom(arrayNumero)
         cuadro.style[`background-color`] = arrayColores[numeroRandom]
-        objetos[`cuadrado` + [indexMas]]["color"] = arrayColores[numeroRandom]
+        
         arrayColores.splice(numeroRandom, 1)
     })
 }
@@ -70,40 +45,29 @@ function asignarCuadro(e) {
     
     if(seleccionCuadro1 === undefined) {
         seleccionCuadro1 = e
-        agregarBordesCuadrado(seleccionCuadro1)
         mostrarCuadro(seleccionCuadro1)
     } else if(seleccionCuadro1 != e) {
         seleccionCuadro2 = e
-        agregarBordesCuadrado(seleccionCuadro2)
         mostrarCuadro(seleccionCuadro2)
+        compararCuadro()
     } else {
-        eliminarBordesCuadrado(seleccionCuadro1)
         ocultarCuadro(seleccionCuadro1)
         seleccionCuadro1 = undefined
     }
     
-    compararCuadro()
+    
         
 }
 
 function compararCuadro() {
     if(seleccionCuadro1 && seleccionCuadro2) {
         
-            if(objetos[seleccionCuadro1.id].color === objetos[seleccionCuadro2.id].color) {
+            if(seleccionCuadro1.style[`background-color`] === seleccionCuadro2.style[`background-color`]) {
 
-                seleccionCuadro1.style.visibility = "hidden"
-                seleccionCuadro2.style.visibility = "hidden"
-                
-                let elementoPadreSeleccionCuadro1 = seleccionCuadro1.parentElement
-                let elementoPadreSeleccionCuadro2 = seleccionCuadro2.parentElement
-                elementoPadreSeleccionCuadro1.style.backgroundColor = objetos[seleccionCuadro1.id].color
-                elementoPadreSeleccionCuadro2.style.backgroundColor = objetos[seleccionCuadro2.id].color
+                seleccionCuadro1.parentElement.style.backgroundColor = seleccionCuadro1.style[`background-color`]
+                seleccionCuadro2.parentElement.style.backgroundColor = seleccionCuadro2.style[`background-color`]
 
-                seleccionCuadro1.remove()
-                seleccionCuadro2.remove()
 
-                eliminarBordesCuadrado(seleccionCuadro1)
-                eliminarBordesCuadrado(seleccionCuadro2)
                 
                 seleccionCuadro1 = undefined
                 seleccionCuadro2 = undefined
@@ -114,16 +78,15 @@ function compararCuadro() {
                 if(contadorPares === 6){
                     document.querySelector(".container").style.display = "none"
                     
-                    resultado.style.visibility = "visible"
-                    resultado.textContent = `Finalizaste el juego en ${contador} turnos!!!`
-                    document.querySelector(".reiniciar").style.visibility = "visible"
+                    resultado.style.display = "block"
+                    parrafo.textContent = `Finalizaste el juego en ${contador} turnos!!!`
+                    document.querySelector(".reiniciar").style.display = "block"
+
 
                 }
             } else {
                 ocultarCuadro(seleccionCuadro1)
                 ocultarCuadro(seleccionCuadro2)
-                eliminarBordesCuadrado(seleccionCuadro1)
-                eliminarBordesCuadrado(seleccionCuadro2)
 
                 seleccionCuadro1 = undefined
                 seleccionCuadro2 = undefined
@@ -150,25 +113,16 @@ function reiniciarCuadros() {
 }
 
 function reinciarCuadro(cuadro) {
-    cuadro.style.visibility = "visible"
-    let elementoPadreCuadro = cuadro.parentElement
-    elementoPadreCuadro.style.backgroundColor = ""
+    
+    cuadro.style.opacity = 0
+    cuadro.parentElement.style[`background-color`] = "white"
 }
 
 function ocultarResultado() {
-    document.querySelector(".container").style.visibility = "visible"
-    resultado.style.visibility = "hidden"
-    document.querySelector(".reiniciar").style.visibility = "hidden"
-}
-
-function agregarBordesCuadrado(cuadro) {
-    cuadro.style.border = "1px solid"
-    cuadro.style[`border-color`] = "white"
-}
-
-function eliminarBordesCuadrado(cuadro) {
-    cuadro.style.border = ""
-    cuadro.style[`border-color`] = ""
+    document.querySelector(".container").style.display = ""
+    resultado.style.display = "none"
+    parrafo.textContent = ""
+    document.querySelector(".reiniciar").style.display = "none"
 }
 
 function mostrarCuadro(cuadro) {
@@ -181,6 +135,7 @@ function ocultarCuadro(cuadro) {
     },500)
     
 }
+
 
 /* 
 
