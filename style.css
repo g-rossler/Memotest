@@ -1,14 +1,22 @@
 body {
-    background-color:cadetblue;
+    background-color:white;
 }
 
 .cuadro {
     text-align: center;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    transition: opacity ease 0.2s;
 }
 
 .resultado {
     visibility: hidden;
     text-align: center;
+}
+
+.fila{
+    height: 25vh;
 }
 
 .reiniciar {
@@ -17,54 +25,11 @@ body {
 
 .borde {
     border: 1px solid;
-    border-color: aquamarine;
+    border-color: black;
 }
 
-#cuadrado1 {
+.cuadro{
     opacity: 0;
     background-color: ""
 }
-#cuadrado2 {
-    opacity: 0;
-    background-color: ""
-}
-#cuadrado3 {
-    opacity: 0;
-    background-color: ""
-}
-#cuadrado4 {
-    opacity: 0;
-    background-color: ""
-}
-#cuadrado5 {
-    opacity: 0;
-    background-color: ""
-}
-#cuadrado6 {
-    opacity: 0;
-    background-color: ""
-}
-#cuadrado7 {
-    opacity: 0;
-    background-color: ""
-}
-#cuadrado8 {
-    opacity: 0;
-    background-color: ""
-}
-#cuadrado9 {
-    opacity: 0;
-    background-color: ""
-}
-#cuadrado10 {
-    opacity: 0;
-    background-color: ""
-}
-#cuadrado11 {
-    opacity: 0;
-    background-color: ""
-}
-#cuadrado12 {
-    opacity: 0;
-    background-color: ""
-}
+
