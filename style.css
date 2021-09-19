@@ -11,7 +11,7 @@ body {
 }
 
 .resultado {
-    visibility: hidden;
+    display: none;
     text-align: center;
 }
 
@@ -20,7 +20,7 @@ body {
 }
 
 .reiniciar {
-    visibility: hidden;
+    display: none;
 }
 
 .borde {
