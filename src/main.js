@@ -1,29 +1,3 @@
-let objetos = {
-    cuadrado1 : {
-    },
-    cuadrado2 : {
-    },
-    cuadrado3 : {
-    },
-    cuadrado4 : {
-    },
-    cuadrado5 : {
-    },
-    cuadrado6 : {
-    },
-    cuadrado7 : {
-    },
-    cuadrado8 : { 
-    },
-    cuadrado9 : {   
-    },
-    cuadrado10 : {    
-    },
-    cuadrado11 : {      
-    },
-    cuadrado12 : {  
-    }
-}
 
 let $tablero = document.querySelector(".container")
 let seleccionCuadro1;
@@ -44,7 +18,7 @@ function asignarColores() {
         let arrayNumero = arrayColores.length
         let numeroRandom = numerosRandom(arrayNumero)
         cuadro.style[`background-color`] = arrayColores[numeroRandom]
-        objetos[`cuadrado` + [indexMas]]["color"] = arrayColores[numeroRandom]
+        
         arrayColores.splice(numeroRandom, 1)
     })
 }
@@ -70,26 +44,23 @@ function asignarCuadro(e) {
     
     if(seleccionCuadro1 === undefined) {
         seleccionCuadro1 = e
-        agregarBordesCuadrado(seleccionCuadro1)
         mostrarCuadro(seleccionCuadro1)
     } else if(seleccionCuadro1 != e) {
         seleccionCuadro2 = e
-        agregarBordesCuadrado(seleccionCuadro2)
         mostrarCuadro(seleccionCuadro2)
     } else {
-        eliminarBordesCuadrado(seleccionCuadro1)
         ocultarCuadro(seleccionCuadro1)
         seleccionCuadro1 = undefined
     }
     
-    compararCuadro()
+    
         
 }
 
 function compararCuadro() {
     if(seleccionCuadro1 && seleccionCuadro2) {
         
-            if(objetos[seleccionCuadro1.id].color === objetos[seleccionCuadro2.id].color) {
+            if(seleccionCuadro1.style[`background-color`] === seleccionCuadro2.style[`background-color`]) {
 
                 seleccionCuadro1.style.visibility = "hidden"
                 seleccionCuadro2.style.visibility = "hidden"
