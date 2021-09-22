@@ -7,70 +7,45 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='node_modules/bootstrap/dist/css/bootstrap.min.css'>
     <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@800&display=swap" rel="stylesheet">
+
 </head>
 <body>
-    <div class="container">
-        <div class="row fila">
-            <div class="col borde">
-                <div class="cuadro" id="cuadrado1"></div>
-            </div>
-            
-            <div class="col borde">
-                <div class="cuadro" id="cuadrado2"></div>
-            </div>
-
-            <div class="col borde">
-                <div class="cuadro" id="cuadrado3"></div>
-            </div>
-
+    <div class="inicio">
+        <div class="fondo">
+          <div class="cuadroDeFondo" id="cuadroDeFondo1"></div>
+          <div class="cuadroDeFondo" id="cuadroDeFondo2"></div>
+          <div class="cuadroDeFondo" id="cuadroDeFondo3"></div>
+          <div class="cuadroDeFondo" id="cuadroDeFondo4"></div>
         </div>
-        <div class="row fila">
-            <div class="col borde">
-                <div class="cuadro" id="cuadrado4"></div>
-            </div>
-            
-            <div class="col borde">
-                <div class="cuadro" id="cuadrado5"></div>
-            </div>
-
-            <div class="col borde">
-                <div class="cuadro" id="cuadrado6"></div>
-            </div>
-        </div>
-        <div class="row fila">
-            <div class="col borde">
-                <div class="cuadro" id="cuadrado7"></div>
-            </div>
-            
-            <div class="col borde">
-                <div class="cuadro" id="cuadrado8"></div>
-            </div>
-
-            <div class="col borde">
-                <div class="cuadro" id="cuadrado9"></div>
-            </div>
-        </div>
-        <div class="row fila">
-            <div class="col borde">
-                <div class="cuadro" id="cuadrado10"></div>
-            </div>
-            
-            <div class="col borde">
-                <div class="cuadro" id="cuadrado11"></div>
-            </div>
-
-            <div class="col borde">
-                <div class="cuadro" id="cuadrado12"></div>
-            </div>
-        </div>
-      </div>
-
     
-    <div class="d-grid gap-2 col-6 mx-auto resultado">
-        <p class="parrafo"></p>
-        <button class="btn btn-primary reiniciar">Jugar de vuelta</button>
+        <p class="titulo">MEMOTEST</p>
+        <p class="subtitulo">ELEGI LA DIFICULTAD</p>
+    
+        <button class="botones" id="button1">FACIL</button>
+        <button class="botones" id="button2">MEDIO</button>
+        <button class="botones" id="button3">DIFICIL</button>
+    
+        <a class="creditos" href="https://github.com/g-rossler">CREADO POR GERARDO ROSSLER</a>
     </div>
+
+
+    <div id="tabla">
+        <div class="container">
+
+          </div>
+    </div>
+    
+
+    <div id="resultado" class="align-middle">
+        <div class="d-grid gap-2 col-6 mx-auto">
+            <p class="parrafo"></p>
+            <button class="btn btn-primary reiniciar">Jugar de vuelta</button>
+        </div>
+    </div>
+
 
     <script src='src/main.js'></script>
 </body>
