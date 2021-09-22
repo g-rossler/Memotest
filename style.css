@@ -1,5 +1,7 @@
 body {
     background-color:white;
+    margin: 0px;
+    padding: 0px;
 }
 
 .cuadro {
@@ -8,28 +10,214 @@ body {
     height: 100%;
     cursor: pointer;
     transition: opacity ease 0.2s;
+    opacity: 0;
+    background-color: ""
 }
 
-.resultado {
+#tabla{
     display: none;
+}
+
+#resultado {
     text-align: center;
+    display: none;
 }
 
 .fila{
     height: 25vh;
 }
 
-.reiniciar {
-    display: none;
-}
-
 .borde {
     border: 1px solid;
     border-color: black;
+    padding: 0;
 }
 
-.cuadro{
-    opacity: 0;
-    background-color: ""
+.titulo {
+    font-family: 'Roboto Slab';
+    position: absolute;
+    top: 10vh;
+    left: 50%;
+    margin: 0;
+    margin-left: -299px;
+    font-size: 100px;
+    border: 5px solid;
+    border-color: rgba(0, 0, 0, 1);
+    padding: 0px 10px;
+    background-color: rgba(255, 255, 255, 0.9);
 }
 
+.titulo:hover {
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.subtitulo {
+    font-family: 'Roboto Slab';
+    position: absolute;
+    top: 32vh;
+    left: 50%;
+    margin: 0;
+    margin-left: -228px;
+    font-size: 40px;
+    border: 5px solid;
+    border-color: rgba(0, 0, 0, 1);
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.subtitulo:hover {
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.inicio{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+}
+
+.fondo{
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+.cuadroDeFondo {
+    margin: 0px;
+    padding: 0px;
+  
+}
+
+#cuadroDeFondo1 {
+    background-color: violet;
+    transition: opacity ease 1s;
+    opacity: 1;
+    width: 50%;
+    height: 50%;
+    position: absolute;
+}
+
+#cuadroDeFondo2 {
+    background-color: blue;
+    transition: opacity ease 1s;
+    opacity: 1;
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    left: 50%;
+}
+
+#cuadroDeFondo3 {
+    background-color: green;
+    transition: opacity ease 1s;
+    opacity: 1;
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    top: 50%;
+}
+
+#cuadroDeFondo4 {
+    background-color: yellow;
+    transition: opacity ease 1s;
+    opacity: 1;
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}
+
+.botones {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 0px 0px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    font-family: 'Roboto Slab';
+    font-size: 25px;
+}
+  
+#button1 {
+    background-color: white; 
+    color: black; 
+    border: 4px solid black;
+    position: absolute;
+    top: 55%;
+    right: 70%;
+    min-height: 73px;
+    min-width: 128px;
+    padding: 16px;
+}
+  
+#button1:hover {
+    background-color: red;
+    color: white;
+}
+
+#button2 {
+    background-color: white; 
+    color: black; 
+    border: 4px solid black;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    margin-left: -64px;
+    min-height: 73px;
+    min-width: 128px;
+    padding: 16px;
+}
+  
+#button2:hover {
+    background-color: red;
+    color: white;
+}
+
+#button3 {
+    background-color: white; 
+    color: black; 
+    border: 4px solid black;
+    position: absolute;
+    top: 55%;
+    left: 70%;
+    min-height: 73px;
+    min-width: 128px;
+    padding: 16px;
+}
+  
+#button3:hover {
+    background-color: red;
+    color: white;
+}
+
+.creditos {
+    font-family: 'Roboto Slab';
+    position: absolute;
+    border: 5px solid;
+    border-color: rgba(0, 0, 0, 1);
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.9);
+    bottom: 1vh;
+    left: 50%;
+    margin-left: -145.5px;
+    color: black;
+}
+
+.creditos:hover {
+    background-color: black;
+    color: white;
+}
+
+
+#resultado {
+    font-family: 'Roboto Slab';
+    font-size: 40px;
+    margin-top: 30vh;
+    background-color: yellowgreen;
+    padding: 20px;
+}
