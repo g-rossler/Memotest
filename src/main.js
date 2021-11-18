@@ -10,41 +10,25 @@ let parrafo = document.querySelector(".parrafo")
 
 function cuadrosDeFondo() {
     let cuadro1 = document.querySelector("#cuadroDeFondo1")
+    let cuadro2 = document.querySelector("#cuadroDeFondo2")
+    let cuadro3 = document.querySelector("#cuadroDeFondo3")
+    let cuadro4 = document.querySelector("#cuadroDeFondo4")
+
     setInterval(function() {
         cuadro1.style.opacity = cuadro1.style.opacity === "1" ? 0 : 1;
-    } , 1300)
-            
+    } , 615)
+    
+    setInterval(function() {
+        cuadro2.style.opacity = cuadro2.style.opacity === "1" ? 0 : 1;
+    } , 720)
 
+    setInterval(function() {
+        cuadro3.style.opacity = cuadro3.style.opacity === "1" ? 0 : 1;
+    } , 830)
 
-    for(let i = 0; i < 100; i++) {
-        setTimeout(function() {
-            if(document.querySelector("#cuadroDeFondo2").style.opacity === "1") {
-                document.querySelector("#cuadroDeFondo2").style.opacity = 0
-            } else {
-                document.querySelector("#cuadroDeFondo2").style.opacity = 1
-            }
-        }, i * 1500)
-    }
-
-    for(let i = 0; i < 100; i++) {
-        setTimeout(function() {
-            if(document.querySelector("#cuadroDeFondo3").style.opacity === "1") {
-                document.querySelector("#cuadroDeFondo3").style.opacity = 0
-            } else {
-                document.querySelector("#cuadroDeFondo3").style.opacity = 1
-            }
-        }, i * 1600)        
-    }
-
-    for(let i = 0; i < 100; i++) {
-        setTimeout(function() {
-            if(document.querySelector("#cuadroDeFondo4").style.opacity === "1") {
-                document.querySelector("#cuadroDeFondo4").style.opacity = 0
-            } else {
-                document.querySelector("#cuadroDeFondo4").style.opacity = 1
-            }
-        }, i * 1400)        
-    }
+    setInterval(function() {
+        cuadro4.style.opacity = cuadro4.style.opacity === "1" ? 0 : 1;
+    } , 650)
 
 }
 
