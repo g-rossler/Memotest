@@ -6,16 +6,15 @@ let contadorPares = 0
 let resultado = document.querySelector("#resultado")
 let parrafo = document.querySelector(".parrafo")
 
+
+
 function cuadrosDeFondo() {
-    for(let i = 0; i < 100; i++) {
-        setTimeout(function() {
-            if(document.querySelector("#cuadroDeFondo1").style.opacity === "1") {
-                document.querySelector("#cuadroDeFondo1").style.opacity = 0
-            } else {
-                document.querySelector("#cuadroDeFondo1").style.opacity = 1
-            }
-        }, i * 1300)        
-    }
+    let cuadro1 = document.querySelector("#cuadroDeFondo1")
+    setInterval(function() {
+        cuadro1.style.opacity = cuadro1.style.opacity === "1" ? 0 : 1;
+    } , 1300)
+            
+
 
     for(let i = 0; i < 100; i++) {
         setTimeout(function() {
@@ -137,6 +136,7 @@ function asignarColores(cantidad) {
         
         arrayColores.splice(numeroRandom, 1)
     })
+
 }
 
 function numerosRandom(numero) {
