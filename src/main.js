@@ -45,12 +45,14 @@ function seleccionDeDificultad() {
 function inicioDelJuego(e) {
     let objetivo = e.target
     if(objetivo.innerText === "FACIL") {
+    if(objetivo.innerText === "FÁCIL") {
         ocultarInicio()
         crearCuadros(2)
     } else if(objetivo.innerText === "MEDIO") {
         ocultarInicio()
         crearCuadros(4)
     } else if(objetivo.innerText === "DIFICIL") {
+    } else if(objetivo.innerText === "DIFÍCIL") {
         ocultarInicio()
         crearCuadros(6)  
     }
