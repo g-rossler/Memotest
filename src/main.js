@@ -16,19 +16,19 @@ function cuadrosDeFondo() {
 
     setInterval(function() {
         cuadro1.style.opacity = cuadro1.style.opacity === "1" ? 0 : 1;
-    } , 615)
+    } , 1000)
     
     setInterval(function() {
         cuadro2.style.opacity = cuadro2.style.opacity === "1" ? 0 : 1;
-    } , 720)
+    } , 920)
 
     setInterval(function() {
         cuadro3.style.opacity = cuadro3.style.opacity === "1" ? 0 : 1;
-    } , 830)
+    } , 950)
 
     setInterval(function() {
         cuadro4.style.opacity = cuadro4.style.opacity === "1" ? 0 : 1;
-    } , 650)
+    } , 980)
 
 }
 
@@ -44,13 +44,13 @@ function seleccionDeDificultad() {
 
 function inicioDelJuego(e) {
     let objetivo = e.target
-    if(objetivo.innerText === "FACIL") {
+    if(objetivo.innerText === "FÁCIL") {
         ocultarInicio()
         crearCuadros(2)
     } else if(objetivo.innerText === "MEDIO") {
         ocultarInicio()
         crearCuadros(4)
-    } else if(objetivo.innerText === "DIFICIL") {
+    } else if(objetivo.innerText === "DIFÍCIL") {
         ocultarInicio()
         crearCuadros(6)  
     }
@@ -97,17 +97,17 @@ function crearFilas(cantidad) {
 
 function ocultarInicio() {
     document.querySelector(".inicio").style.display = "none"
-    document.querySelector("#tabla").style.display = "block"
+    document.querySelector("#juego").style.display = "block"
 }
 
 function asignarColores(cantidad) {
     let arrayColores;
     if(cantidad === 2) {
-        arrayColores = ["black", "black", "blue", "blue", "saddlebrown", "saddlebrown"]
+        arrayColores = ["#390099", "#390099", "#9E0059", "#9E0059", "#FF0054", "#FF0054"]
     } else if(cantidad === 4) {
-        arrayColores = ["black", "black", "blue", "blue", "saddlebrown", "saddlebrown", "violet", "violet", "gold", "gold", "green", "green"]
+        arrayColores = ["#390099", "#390099", "#9E0059", "#9E0059", "#FF0054", "#FF0054", "#FF5400", "#FF5400", "#FFBD00", "#FFBD00", "#020887", "#020887"]
     } else {
-        arrayColores = ["black", "black", "blue", "blue", "saddlebrown", "saddlebrown", "violet", "violet", "gold", "gold", "green", "green", "teal", "teal", "yellowgreen", "yellowgreen", "tomato", "tomato"]
+        arrayColores = ["#390099", "#390099", "#9E0059", "#9E0059", "#FF0054", "#FF0054", "#FF5400", "#FF5400", "#FFBD00", "#FFBD00", "#020887", "#020887", "#334195", "#334195", "#647AA3", "#647AA3", "#C6EBBE", "#C6EBBE"]
     }
     
     let cuadros = document.querySelectorAll(".cuadro")
@@ -174,7 +174,7 @@ function compararCuadro() {
                 }
 
                 if(contadorPares === cantidadDePares){
-                    document.querySelector("#tabla").style.display = "none"
+                    document.querySelector("#juego").style.display = "none"
                     resultado.style.display = "block"
                     parrafo.textContent = `Finalizaste el juego en ${contador} turnos!!!`
                 }
@@ -200,7 +200,6 @@ function reiniciarCuadros() {
     document.querySelectorAll(".row").forEach(function($fila) {
         $fila.remove()
     })
-    
     contador = 0
     contadorPares = 0
 }
@@ -208,9 +207,9 @@ function reiniciarCuadros() {
 
 
 function ocultarResultado() {
-    document.querySelector("#tabla").style.display = "block"
+    document.querySelector("#juego").style.display = "block"
     reiniciarCuadros()
-    document.querySelector("#tabla").style.display = "none"
+    document.querySelector("#juego").style.display = "none"
     document.querySelector(".inicio").style.display = "flex"
     resultado.style.display = "none"
     parrafo.textContent = ""
@@ -230,7 +229,6 @@ document.querySelector(".reiniciar").onclick = reiniciar
 
 
 habilitarUsuario($tablero) 
-
 cuadrosDeFondo()
 seleccionDeDificultad()
 
