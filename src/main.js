@@ -15,19 +15,19 @@ function cuadrosDeFondo() {
     let cuadro4 = document.querySelector("#cuadroDeFondo4")
 
     setInterval(function() {
-        cuadro1.style.opacity = cuadro1.style.opacity === "1" ? 0 : 1;
+        cuadro1.style.opacity = cuadro1.style.opacity === "1" ? 0.2 : 1;
     } , 1000)
     
     setInterval(function() {
-        cuadro2.style.opacity = cuadro2.style.opacity === "1" ? 0 : 1;
+        cuadro2.style.opacity = cuadro2.style.opacity === "1" ? 0.2 : 1;
     } , 920)
 
     setInterval(function() {
-        cuadro3.style.opacity = cuadro3.style.opacity === "1" ? 0 : 1;
+        cuadro3.style.opacity = cuadro3.style.opacity === "1" ? 0.2 : 1;
     } , 950)
 
     setInterval(function() {
-        cuadro4.style.opacity = cuadro4.style.opacity === "1" ? 0 : 1;
+        cuadro4.style.opacity = cuadro4.style.opacity === "1" ? 0.2 : 1;
     } , 980)
 
 }
@@ -46,65 +46,54 @@ function inicioDelJuego(e) {
     let objetivo = e.target
     if(objetivo.innerText === "FÁCIL") {
         ocultarInicio()
-        crearCuadros(2)
+        crearTabla(6)
     } else if(objetivo.innerText === "MEDIO") {
         ocultarInicio()
-        crearCuadros(4)
+        crearTabla(12)
     } else if(objetivo.innerText === "DIFÍCIL") {
         ocultarInicio()
-        crearCuadros(6)  
+        crearTabla(18)  
     }
 }
 
-function crearCuadros(cantidad) {
-    if(cantidad === 2) {
-        crearFilas(2)
-        asignarColores(2)
-    } else if(cantidad === 4) {
-        crearFilas(4)
-        asignarColores(4)
-    } else {
-        crearFilas(6)
+function crearTabla(cantidad) {
+    if(cantidad === 6) {
+        crearCuadro(6)
         asignarColores(6)
+    } else if(cantidad === 12) {
+        crearCuadro(12)
+        asignarColores(12)
+    } else {
+        crearCuadro(18)
+        asignarColores(18)
     }
 }
 
-function crearFilas(cantidad) {
-    let contadorCuadros = 1
+function crearCuadro(cantidad) {
+
     for(let i = 0; i < cantidad; i++) {
-        let $fila = document.createElement("div")
-        $fila.className = "row fila"
-        for(let j = 0; j < 3; j++) {
-            let $div = document.createElement("div")
-            $div.className = "cuadro"
-            $div.id = `cuadro${contadorCuadros}`
-            contadorCuadros++
-            let $col = document.createElement("div")
-            $col.className = "col borde"
-            $col.appendChild($div)
-            $fila.appendChild($col)
-        }
-        if(cantidad === 2) {
-            $fila.style.height = "50vh"
-        } else if(cantidad === 4) {
-            $fila.style.height = "25vh"
-        } else {
-            $fila.style.height = "16.60vh"
-        }
-        document.querySelector(".container").appendChild($fila)
+        let $cuadro = document.createElement("div")
+        $cuadro.className = "cuadro"
+        $cuadro.id = `cuadro${i}`
+        let $bordeCuadro = document.createElement("div")
+        $bordeCuadro.className = "borde-cuadro"
+        $bordeCuadro.appendChild($cuadro)
+        document.querySelector(".container").appendChild($bordeCuadro)
     }
 }
+
 
 function ocultarInicio() {
     document.querySelector(".inicio").style.display = "none"
     document.querySelector("#juego").style.display = "block"
+    document.querySelector("#tabla").style.display = "grid"
 }
 
 function asignarColores(cantidad) {
     let arrayColores;
-    if(cantidad === 2) {
+    if(cantidad === 6) {
         arrayColores = ["#390099", "#390099", "#9E0059", "#9E0059", "#FF0054", "#FF0054"]
-    } else if(cantidad === 4) {
+    } else if(cantidad === 12) {
         arrayColores = ["#390099", "#390099", "#9E0059", "#9E0059", "#FF0054", "#FF0054", "#FF5400", "#FF5400", "#FFBD00", "#FFBD00", "#020887", "#020887"]
     } else {
         arrayColores = ["#390099", "#390099", "#9E0059", "#9E0059", "#FF0054", "#FF0054", "#FF5400", "#FF5400", "#FFBD00", "#FFBD00", "#020887", "#020887", "#334195", "#334195", "#647AA3", "#647AA3", "#C6EBBE", "#C6EBBE"]
@@ -114,8 +103,7 @@ function asignarColores(cantidad) {
     
     cuadros.forEach(function(cuadro) {
         
-        let arrayNumero = arrayColores.length
-        let numeroRandom = numerosRandom(arrayNumero)
+        let numeroRandom = numerosRandom(arrayColores.length)
         cuadro.style[`background-color`] = arrayColores[numeroRandom]
         
         arrayColores.splice(numeroRandom, 1)
@@ -164,10 +152,10 @@ function compararCuadro() {
                 contadorPares++
                 contador++
                 let cantidadDePares;
-                let cantidadDeFilas = document.querySelectorAll(".row").length
-                if(cantidadDeFilas === 2) {
+                let cantidadDeCuadros = document.querySelectorAll(".cuadro").length
+                if(cantidadDeCuadros === 6) {
                     cantidadDePares = 3
-                } else if(cantidadDeFilas === 4) {
+                } else if(cantidadDeCuadros === 12) {
                     cantidadDePares = 6
                 } else {
                     cantidadDePares = 9
@@ -197,8 +185,8 @@ function reiniciar() {
 }
 
 function reiniciarCuadros() {
-    document.querySelectorAll(".row").forEach(function($fila) {
-        $fila.remove()
+    document.querySelectorAll(".borde-cuadro").forEach(function($cuadro) {
+        $cuadro.remove()
     })
     contador = 0
     contadorPares = 0
@@ -207,7 +195,6 @@ function reiniciarCuadros() {
 
 
 function ocultarResultado() {
-    document.querySelector("#juego").style.display = "block"
     reiniciarCuadros()
     document.querySelector("#juego").style.display = "none"
     document.querySelector(".inicio").style.display = "flex"
