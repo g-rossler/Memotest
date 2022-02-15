@@ -225,6 +225,7 @@ body {
 }
 
 #juego{
+    display: none;
     background-color: coral;
     height: 100vh;
 }
