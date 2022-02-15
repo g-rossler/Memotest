@@ -20,11 +20,17 @@ body {
     cursor: pointer;
     transition: opacity ease 0.2s;
     opacity: 0;
-    background-color: ""
+    background-color: "";
+    border: 1px solid;
 }
 
-#juego{
+#tabla{
     display: none;
+    height: 80vh;
+    margin: auto;
+    gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 50px;
 }
 
 #resultado {
@@ -32,9 +38,6 @@ body {
     display: none;
 }
 
-.fila{
-    height: 25vh;
-}
 
 .borde {
     border: 1px solid;
@@ -105,21 +108,21 @@ body {
 
 #cuadroDeFondo2 {
     background-color: #313552;
-    transition: opacity ease 1s;
+    transition: opacity ease 920ms;
     opacity: 1;
     left: 50%;
 }
 
 #cuadroDeFondo3 {
     background-color: #2EB086;
-    transition: opacity ease 1s;
+    transition: opacity ease 950ms;
     opacity: 1;
     top: 50%;
 }
 
 #cuadroDeFondo4 {
     background-color: #F76E11;
-    transition: opacity ease 1s;
+    transition: opacity ease 980ms;
     opacity: 1;
     left: 50%;
     top: 50%;
@@ -137,6 +140,7 @@ body {
     background-color: rgba(255, 255, 255, 0.9);
     max-width: 100px;
     width: 10%;
+    height: 5vh;
 }
   
 .botones:hover {
@@ -202,4 +206,25 @@ body {
         width: 20%;
         font-size: 16px;
     }
+}
+
+
+.borde-cuadro{
+    border: 5px solid black;
+    background-color: cornsilk;
+    border-radius: 10px;
+}
+
+#instrucciones{
+    text-align: center;
+    margin: 7vh 50vh;
+    font-size: 35px;
+    color: white;
+    background-color: black;
+    border-radius: 10px;
+}
+
+#juego{
+    background-color: coral;
+    height: 100vh;
 }
