@@ -181,7 +181,7 @@ function compararCuadro() {
 
 function reiniciar() {
     ocultarResultado()
-    cuadrosDeFondo()
+    
 }
 
 function reiniciarCuadros() {
