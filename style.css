@@ -59,6 +59,7 @@ body {
     color: black;
     max-width: 500px;
     text-align: center;
+    border-radius: 5px;
 }
 
 .titulo:hover {
@@ -79,6 +80,7 @@ body {
     padding: 10px;
     background-color: rgba(255, 255, 255, 0.9);
     text-align: center;
+    border-radius: 5px;
 }
 
 .subtitulo:hover {
@@ -102,27 +104,27 @@ body {
 
 #cuadroDeFondo1 {
     background-color: #B8405E;
-    transition: opacity ease 1s;
+    transition: opacity ease 2.1s;
     opacity: 1;
 }
 
 #cuadroDeFondo2 {
     background-color: #313552;
-    transition: opacity ease 920ms;
+    transition: opacity ease 2.7s;
     opacity: 1;
     left: 50%;
 }
 
 #cuadroDeFondo3 {
     background-color: #2EB086;
-    transition: opacity ease 950ms;
+    transition: opacity ease 2.2s;
     opacity: 1;
     top: 50%;
 }
 
 #cuadroDeFondo4 {
     background-color: #F76E11;
-    transition: opacity ease 980ms;
+    transition: opacity ease 2.5s;
     opacity: 1;
     left: 50%;
     top: 50%;
@@ -141,6 +143,7 @@ body {
     max-width: 100px;
     width: 10%;
     height: 5vh;
+    border-radius: 5px;
 }
   
 .botones:hover {
@@ -177,6 +180,7 @@ body {
     color: black;
     text-align: center;
     max-width: 300px;
+    border-radius: 5px;
 }
 
 .creditos:hover {

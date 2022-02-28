@@ -12,6 +12,11 @@ function cuadrosDeFondo() {
   const cuadro3 = document.querySelector('#cuadroDeFondo3');
   const cuadro4 = document.querySelector('#cuadroDeFondo4');
 
+  cuadro1.style.opacity = cuadro1.style.opacity === '1' ? 0.2 : 1;
+  cuadro2.style.opacity = cuadro2.style.opacity === '1' ? 0.2 : 1;
+  cuadro3.style.opacity = cuadro3.style.opacity === '1' ? 0.2 : 1;
+  cuadro4.style.opacity = cuadro4.style.opacity === '1' ? 0.2 : 1;
+  
   setInterval(() => {
     cuadro1.style.opacity = cuadro1.style.opacity === '1' ? 0.2 : 1;
   }, 2100);
