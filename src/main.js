@@ -1,38 +1,10 @@
 const $tablero = document.querySelector('.container');
+const resultado = document.querySelector('#resultado');
+const parrafo = document.querySelector('.parrafo');
 let seleccionCuadro1;
 let seleccionCuadro2;
 let contador = 0;
 let contadorPares = 0;
-const resultado = document.querySelector('#resultado');
-const parrafo = document.querySelector('.parrafo');
-
-function cuadrosDeFondo() {
-  const cuadro1 = document.querySelector('#cuadroDeFondo1');
-  const cuadro2 = document.querySelector('#cuadroDeFondo2');
-  const cuadro3 = document.querySelector('#cuadroDeFondo3');
-  const cuadro4 = document.querySelector('#cuadroDeFondo4');
-
-  cuadro1.style.opacity = cuadro1.style.opacity === '1' ? 0.2 : 1;
-  cuadro2.style.opacity = cuadro2.style.opacity === '1' ? 0.2 : 1;
-  cuadro3.style.opacity = cuadro3.style.opacity === '1' ? 0.2 : 1;
-  cuadro4.style.opacity = cuadro4.style.opacity === '1' ? 0.2 : 1;
-  
-  setInterval(() => {
-    cuadro1.style.opacity = cuadro1.style.opacity === '1' ? 0.2 : 1;
-  }, 2100);
-
-  setInterval(() => {
-    cuadro2.style.opacity = cuadro2.style.opacity === '1' ? 0.2 : 1;
-  }, 2700);
-
-  setInterval(() => {
-    cuadro3.style.opacity = cuadro3.style.opacity === '1' ? 0.2 : 1;
-  }, 2200);
-
-  setInterval(() => {
-    cuadro4.style.opacity = cuadro4.style.opacity === '1' ? 0.2 : 1;
-  }, 2500);
-}
 
 function ocultarInicio() {
   document.querySelector('.inicio').style.display = 'none';
@@ -212,5 +184,4 @@ function reiniciar() {
 document.querySelector('.reiniciar').onclick = reiniciar;
 
 habilitarUsuario($tablero);
-cuadrosDeFondo();
 seleccionDeDificultad();
